@@ -4,12 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfolio | Santiago Pérez Pradi</title>
-    <!-- Font Awesome -->
+
+    <!-- Font Awesome (íconos) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
     <style>
-        /* Reset y base */
+        /* ---------- RESET Y ESTILOS BÁSICOS ---------- */
         * {
             margin: 0;
             padding: 0;
@@ -18,151 +20,218 @@
             text-decoration: none;
             scroll-behavior: smooth;
         }
+
         :root {
-            --primary: #6c63ff;
-            --bg: #f4f4f9;
-            --text: #1e1e2a;
+            --primary-color: #6c63ff;
+            --bg-color: #f4f4f9;
+            --text-color: #1e1e2a;
             --white: #ffffff;
-            --shadow: 0 5px 15px rgba(0,0,0,0.08);
-            --radius: 10px;
+            --shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            --border-radius: 10px;
         }
+
         body {
             font-family: 'Poppins', sans-serif;
-            background: var(--bg);
-            color: var(--text);
+            background-color: var(--bg-color);
+            color: var(--text-color);
             line-height: 1.7;
         }
+
         .container {
-            max-width: 1100px;
+            max-width: 1000px;
             margin: 0 auto;
             padding: 0 25px;
         }
-        /* Header */
+
+        /* ---------- HEADER ---------- */
         header {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             background: var(--white);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
             z-index: 1000;
             padding: 15px 0;
         }
+
         nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
         }
+
         .logo {
             font-size: 1.6rem;
             font-weight: 700;
-            color: var(--primary);
+            color: var(--primary-color);
+            letter-spacing: 1px;
         }
-        .logo span { color: var(--text); }
+
+        .logo span {
+            color: var(--text-color);
+        }
+
         .nav-links {
             display: flex;
             gap: 30px;
             align-items: center;
         }
+
         .nav-links a {
-            color: var(--text);
+            color: var(--text-color);
             font-weight: 500;
             font-size: 0.95rem;
-            transition: 0.2s;
+            transition: color 0.2s;
         }
+
         .nav-links a:hover,
         .nav-links a.active {
-            color: var(--primary);
+            color: var(--primary-color);
         }
-        .nav-links a.active { font-weight: 600; }
+
+        .nav-links a.active {
+            font-weight: 600;
+        }
+
         .hamburger {
             display: none;
             font-size: 1.8rem;
             cursor: pointer;
+            color: var(--text-color);
         }
-        /* Secciones */
+
+        /* ---------- SECCIONES ---------- */
         section {
             padding: 100px 0 60px;
         }
+
         .section-title {
             text-align: center;
             font-size: 2.2rem;
             font-weight: 700;
             margin-bottom: 8px;
+            color: var(--text-color);
         }
-        .section-title span { color: var(--primary); }
+
+        .section-title span {
+            color: var(--primary-color);
+        }
+
         .section-subtitle {
             text-align: center;
             color: #888;
             margin-bottom: 45px;
+            font-weight: 400;
+            font-size: 1rem;
         }
-        /* Home */
+
+        /* ---------- HOME ---------- */
         #home {
             min-height: 100vh;
             display: flex;
             align-items: center;
-            text-align: center;
             background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
             padding-top: 80px;
+            text-align: center;
         }
+
         .home-text {
             max-width: 800px;
             margin: 0 auto;
         }
+
+        .home-text h3 {
+            font-size: 1.3rem;
+            font-weight: 400;
+        }
+
         .home-text h1 {
             font-size: 3.5rem;
             font-weight: 700;
             line-height: 1.2;
         }
-        .home-text h1 span { color: var(--primary); }
+
+        .home-text h1 span {
+            color: var(--primary-color);
+        }
+
         .home-text p {
             margin: 20px auto 30px;
             color: #555;
             max-width: 600px;
         }
+
         .btn {
             display: inline-block;
             padding: 12px 35px;
-            background: var(--primary);
+            background: var(--primary-color);
             color: var(--white);
             border-radius: 30px;
             font-weight: 500;
-            border: 2px solid var(--primary);
-            transition: 0.2s;
+            transition: background 0.2s;
+            border: 2px solid var(--primary-color);
         }
+
         .btn:hover {
             background: transparent;
-            color: var(--primary);
+            color: var(--primary-color);
         }
-        /* About */
-        #about { background: var(--white); }
+
+        /* ---------- ABOUT ---------- */
+        #about {
+            background: var(--white);
+        }
+
         .about-text {
             max-width: 850px;
             margin: 0 auto;
-            text-align: justify;
-        }
-        .about-text h2 {
             text-align: center;
+        }
+
+        .about-text h2 {
+            font-size: 2rem;
             margin-bottom: 15px;
         }
-        .about-text p { margin-bottom: 20px; color: #444; }
-        /* Skills */
-        #skills { background: var(--bg); }
+
+        .about-text p {
+            color: #444;
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+
+        /* ---------- SKILLS ---------- */
+        #skills {
+            background: var(--bg-color);
+        }
+
         .skills-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px,1fr));
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 25px;
         }
+
         .skill-box {
             background: var(--white);
-            padding: 20px 20px;
-            border-radius: var(--radius);
+            padding: 25px 20px;
+            border-radius: var(--border-radius);
             box-shadow: var(--shadow);
-            border-left: 4px solid var(--primary);
+            border-left: 4px solid var(--primary-color);
         }
-        .skill-box h3 { margin-bottom: 5px; font-size: 1.1rem; }
-        .skill-box p { color: #666; font-size: 0.9rem; margin-bottom: 8px; }
+
+        .skill-box h3 {
+            margin-bottom: 8px;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .skill-box p {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 8px;
+        }
+
         .skill-bar {
             width: 100%;
             height: 8px;
@@ -170,100 +239,143 @@
             border-radius: 10px;
             overflow: hidden;
         }
+
         .skill-bar .fill {
             height: 100%;
-            background: var(--primary);
+            background: var(--primary-color);
             border-radius: 10px;
         }
-        /* Services */
-        #services { background: var(--white); }
+
+        /* ---------- SERVICES ---------- */
+        #services {
+            background: var(--white);
+        }
+
         .services-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: 25px;
         }
+
         .service-card {
-            background: var(--bg);
-            padding: 30px 20px;
-            border-radius: var(--radius);
+            background: var(--bg-color);
+            padding: 35px 20px;
+            border-radius: var(--border-radius);
             text-align: center;
             box-shadow: var(--shadow);
+            border: 1px solid transparent;
+            transition: border 0.2s;
         }
+
         .service-card i {
             font-size: 2.5rem;
-            color: var(--primary);
+            color: var(--primary-color);
             margin-bottom: 15px;
         }
-        .service-card h3 { margin-bottom: 8px; font-size: 1.2rem; }
-        .service-card p { color: #555; font-size: 0.95rem; }
-        /* Portfolio */
-        #portfolio { background: var(--bg); }
+
+        .service-card h3 {
+            margin-bottom: 8px;
+            font-size: 1.2rem;
+        }
+
+        .service-card p {
+            color: #555;
+            font-size: 0.95rem;
+        }
+
+        /* ---------- PORTFOLIO ---------- */
+        #portfolio {
+            background: var(--bg-color);
+        }
+
         .portfolio-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
         }
+
         .portfolio-item {
             background: var(--white);
-            border-radius: var(--radius);
+            border-radius: var(--border-radius);
             overflow: hidden;
             box-shadow: var(--shadow);
-            border-bottom: 3px solid var(--primary);
+            border-bottom: 3px solid var(--primary-color);
         }
+
         .portfolio-item img {
             width: 100%;
-            height: 200px;
+            height: 220px;
             object-fit: cover;
-            display: block;
             background: #d9d9f0;
+            display: block;
         }
+
         .portfolio-info {
             padding: 20px;
         }
+
         .portfolio-info h3 {
-            color: var(--primary);
-            font-size: 1.2rem;
             margin-bottom: 5px;
+            color: var(--primary-color);
+            font-size: 1.2rem;
         }
-        .tech-tags {
+
+        .portfolio-info .tech-tags {
             display: flex;
             flex-wrap: wrap;
             gap: 6px;
             margin: 10px 0 12px;
         }
-        .tech-tags span {
-            background: var(--bg);
+
+        .portfolio-info .tech-tags span {
+            background: var(--bg-color);
             padding: 3px 12px;
             border-radius: 20px;
             font-size: 0.7rem;
             font-weight: 500;
+            color: var(--text-color);
             border: 1px solid #ddd;
         }
+
         .portfolio-info p {
             color: #444;
             font-size: 0.95rem;
             text-align: justify;
         }
-        /* Contact */
-        #contact { background: var(--white); text-align: center; }
+
+        /* ---------- CONTACT ---------- */
+        #contact {
+            background: var(--white);
+            text-align: center;
+        }
+
         .contact-box {
             max-width: 600px;
             margin: 0 auto;
             padding: 30px;
-            background: var(--bg);
-            border-radius: var(--radius);
+            background: var(--bg-color);
+            border-radius: var(--border-radius);
             box-shadow: var(--shadow);
         }
-        .contact-box p { font-size: 1.1rem; margin-bottom: 20px; }
+
+        .contact-box p {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
         .contact-box .email-link {
             font-size: 1.4rem;
             font-weight: 600;
-            color: var(--primary);
+            color: var(--primary-color);
+            text-decoration: none;
         }
-        .social {
+
+        .contact-box .social {
             margin-top: 25px;
         }
-        .social a {
+
+        .contact-box .social a {
             display: inline-block;
             width: 50px;
             height: 50px;
@@ -271,26 +383,40 @@
             border-radius: 50%;
             text-align: center;
             line-height: 50px;
-            color: var(--primary);
+            color: var(--primary-color);
             font-size: 1.3rem;
             margin: 0 8px;
+            transition: background 0.2s;
             box-shadow: var(--shadow);
-            transition: 0.2s;
         }
-        .social a:hover {
-            background: var(--primary);
+
+        .contact-box .social a:hover {
+            background: var(--primary-color);
             color: var(--white);
         }
+
+        /* ---------- FOOTER ---------- */
         footer {
             background: #1e1e2a;
             color: #ccc;
             text-align: center;
             padding: 25px 0;
         }
-        footer span { color: var(--primary); }
-        /* Responsive */
+
+        footer p {
+            font-size: 0.9rem;
+        }
+
+        footer span {
+            color: var(--primary-color);
+        }
+
+        /* ---------- RESPONSIVE ---------- */
         @media (max-width: 768px) {
-            .hamburger { display: block; }
+            .hamburger {
+                display: block;
+            }
+
             .nav-links {
                 display: none;
                 width: 100%;
@@ -300,268 +426,329 @@
                 border-top: 1px solid #eee;
                 margin-top: 10px;
             }
-            .nav-links.open { display: flex; }
-            .home-text h1 { font-size: 2.5rem; }
-            .section-title { font-size: 1.8rem; }
-            .services-container { grid-template-columns: 1fr; }
+
+            .nav-links.open {
+                display: flex;
+            }
+
+            .home-text h1 {
+                font-size: 2.5rem;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .services-container {
+                grid-template-columns: 1fr;
+            }
         }
+
         @media (max-width: 480px) {
-            .home-text h1 { font-size: 2rem; }
-            .portfolio-container { grid-template-columns: 1fr; }
+            .home-text h1 {
+                font-size: 2rem;
+            }
+            .portfolio-container {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
 
-<!-- HEADER -->
-<header>
-    <div class="container">
-        <nav>
-            <div class="logo">Port<span>folio</span></div>
-            <ul class="nav-links" id="navLinks">
-                <li><a href="#home" class="active">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#portfolio">Portfolio</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <div class="hamburger" id="hamburger">
-                <i class="fas fa-bars"></i>
-            </div>
-        </nav>
-    </div>
-</header>
-
-<!-- HOME -->
-<section id="home">
-    <div class="container home-text">
-        <h3>Hello, It's Me</h3>
-        <h1><span>Santiago Pérez Pradi</span></h1>
-        <h3>Electronics & Embedded Systems Student</h3>
-        <p>
-            Final-year student at Instituto Madero, specialized in Telecommunications.
-            Passionate about automotive electronics, hardware design, and integrating
-            software with physical systems.
-        </p>
-        <a href="#contact" class="btn">Get in Touch</a>
-    </div>
-</section>
-
-<!-- ABOUT -->
-<section id="about">
-    <div class="container">
-        <h2 class="section-title">About <span>Me</span></h2>
-        <p class="section-subtitle">— Who I am —</p>
-        <div class="about-text">
-            <h2>I'm Santiago 👋</h2>
-            <p>
-                I am an 18-year-old electronics student in my final year at Instituto Madero,
-                specializing in telecommunications. From a young age, I have been fascinated by
-                how things work, which led me to dive deep into <strong>automotive electronics</strong>
-                and embedded systems.
-            </p>
-            <p>
-                I consider myself a <strong>highly responsible and organized</strong> individual —
-                I firmly believe that order and meticulous planning are the foundation of efficiency
-                and success in any project. I am a proactive problem-solver, always eager to learn
-                new technologies, and I thrive in team environments. My greatest satisfaction comes
-                from building tangible, functional hardware that integrates seamlessly with software.
-            </p>
-            <p>
-                Whether it's designing a PCB in KiCad, troubleshooting a circuit with a multimeter,
-                or programming an ESP32, I bring dedication and a methodical approach to every challenge.
-            </p>
+    <!-- ==================== HEADER ==================== -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">Port<span>folio</span></div>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="#home" class="active">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="hamburger" id="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
         </div>
-    </div>
-</section>
+    </header>
 
-<!-- SKILLS -->
-<section id="skills">
-    <div class="container">
-        <h2 class="section-title">My <span>Skills</span></h2>
-        <p class="section-subtitle">— What I master —</p>
-        <div class="skills-container">
-            <div class="skill-box">
-                <h3>⚡ Electronics (Analog & Digital)</h3>
-                <p>Intermediate / Advanced</p>
-                <div class="skill-bar"><div class="fill" style="width:80%;"></div></div>
-            </div>
-            <div class="skill-box">
-                <h3>🛠️ PCB Design (KiCad / Proteus)</h3>
-                <p>Intermediate</p>
-                <div class="skill-bar"><div class="fill" style="width:75%;"></div></div>
-            </div>
-            <div class="skill-box">
-                <h3>📟 Microcontrollers (ESP32, Arduino)</h3>
-                <p>Intermediate</p>
-                <div class="skill-bar"><div class="fill" style="width:70%;"></div></div>
-            </div>
-            <div class="skill-box">
-                <h3>🐍 Python (Flask, Basic)</h3>
-                <p>Basic / Intermediate</p>
-                <div class="skill-bar"><div class="fill" style="width:60%;"></div></div>
-            </div>
-            <div class="skill-box">
-                <h3>🌐 HTML & CSS (Basic)</h3>
-                <p>Basic</p>
-                <div class="skill-bar"><div class="fill" style="width:50%;"></div></div>
-            </div>
-            <div class="skill-box">
-                <h3>🔧 Troubleshooting & Soldering</h3>
-                <p>Advanced hands-on</p>
-                <div class="skill-bar"><div class="fill" style="width:85%;"></div></div>
+    <!-- ==================== HOME ==================== -->
+    <section id="home">
+        <div class="container home-text">
+            <h3>Hello, It's Me</h3>
+            <h1><span>Santiago Pérez Pradi</span></h1>
+            <h3>Electronics & Embedded Systems Student</h3>
+            <p>
+                Final-year student at Instituto Madero, specialized in Telecommunications. 
+                Passionate about automotive electronics, hardware design, and integrating 
+                software with physical systems.
+            </p>
+            <a href="#contact" class="btn">Get in Touch</a>
+        </div>
+    </section>
+
+    <!-- ==================== ABOUT ==================== -->
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title">About <span>Me</span></h2>
+            <p class="section-subtitle">— Who I am —</p>
+            <div class="about-text">
+                <h2>I'm Santiago 👋</h2>
+                <p>
+                    I am an 18-year-old electronics student in my final year at Instituto Madero, 
+                    specializing in telecommunications. From a young age, I have been fascinated by 
+                    how things work, which led me to dive deep into <strong>automotive electronics</strong> 
+                    and embedded systems.
+                </p>
+                <p>
+                    I consider myself a <strong>highly responsible and organized</strong> individual — 
+                    I firmly believe that order and meticulous planning are the foundation of efficiency 
+                    and success in any project. I am a proactive problem-solver, always eager to learn 
+                    new technologies, and I thrive in team environments. My greatest satisfaction comes 
+                    from building tangible, functional hardware that integrates seamlessly with software.
+                </p>
+                <p>
+                    Whether it's designing a PCB in KiCad, troubleshooting a circuit with a multimeter, 
+                    or programming an ESP32, I bring dedication and a methodical approach to every challenge.
+                </p>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- SERVICES -->
-<section id="services">
-    <div class="container">
-        <h2 class="section-title">My <span>Services</span></h2>
-        <p class="section-subtitle">— What I offer —</p>
-        <div class="services-container">
-            <div class="service-card">
-                <i class="fas fa-microchip"></i>
-                <h3>Electronic Circuit Design</h3>
-                <p>From simulation (Proteus) to schematic design, creating reliable analog and digital circuits.</p>
-            </div>
-            <div class="service-card">
-                <i class="fas fa-pcb"></i>
-                <h3>PCB Prototyping</h3>
-                <p>Full PCB layout in KiCad, including etching, soldering, and hands-on troubleshooting.</p>
-            </div>
-            <div class="service-card">
-                <i class="fas fa-wifi"></i>
-                <h3>Embedded Systems (IoT)</h3>
-                <p>Programming microcontrollers (ESP32) and integrating sensors, cameras, and wireless communication.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- PORTFOLIO -->
-<section id="portfolio">
-    <div class="container">
-        <h2 class="section-title">Latest <span>Projects</span></h2>
-        <p class="section-subtitle">— My recent work —</p>
-        <div class="portfolio-container">
-
-            <!-- Proyecto 1: Semáforo -->
-            <div class="portfolio-item">
-                <img src="img/semaforo.jpg" alt="Smart Red Light Camera" />
-                <div class="portfolio-info">
-                    <h3>Smart Red Light Camera System</h3>
-                    <div class="tech-tags">
-                        <span>ESP32</span><span>ESP32-CAM</span>
-                        <span>Ultrasonic</span><span>Flask</span><span>MongoDB</span>
-                    </div>
-                    <p>
-                        This project simulates an intelligent traffic enforcement system. An ESP32 controls a traffic
-                        light and an ultrasonic sensor. When the light turns red and a vehicle passes, it triggers an
-                        ESP32-CAM module via WiFi to capture a photo. The image is sent with a timestamp to a MongoDB
-                        database on a PC. A Flask server serves a web interface that uses OCR to extract the license
-                        plate and automatically generates a digital traffic fine.
-                    </p>
+    <!-- ==================== SKILLS ==================== -->
+    <section id="skills">
+        <div class="container">
+            <h2 class="section-title">My <span>Skills</span></h2>
+            <p class="section-subtitle">— What I master —</p>
+            <div class="skills-container">
+                <div class="skill-box">
+                    <h3>⚡ Electronics (Analog & Digital)</h3>
+                    <p>Intermediate / Advanced</p>
+                    <div class="skill-bar"><div class="fill" style="width: 80%;"></div></div>
+                </div>
+                <div class="skill-box">
+                    <h3>🛠️ PCB Design (KiCad / Proteus)</h3>
+                    <p>Intermediate</p>
+                    <div class="skill-bar"><div class="fill" style="width: 75%;"></div></div>
+                </div>
+                <div class="skill-box">
+                    <h3>📟 Microcontrollers (ESP32, Arduino)</h3>
+                    <p>Intermediate</p>
+                    <div class="skill-bar"><div class="fill" style="width: 70%;"></div></div>
+                </div>
+                <div class="skill-box">
+                    <h3>🐍 Python (Flask, Basic)</h3>
+                    <p>Basic / Intermediate</p>
+                    <div class="skill-bar"><div class="fill" style="width: 60%;"></div></div>
+                </div>
+                <div class="skill-box">
+                    <h3>🌐 HTML & CSS (Basic)</h3>
+                    <p>Basic</p>
+                    <div class="skill-bar"><div class="fill" style="width: 50%;"></div></div>
+                </div>
+                <div class="skill-box">
+                    <h3>🔧 Troubleshooting & Soldering</h3>
+                    <p>Advanced hands-on</p>
+                    <div class="skill-bar"><div class="fill" style="width: 85%;"></div></div>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <!-- Proyecto 2: Tester LAN (placa) -->
-            <div class="portfolio-item">
-                <img src="img/placa.jpg" alt="LAN Tester Board" />
-                <div class="portfolio-info">
-                    <h3>UTP LAN Cable Tester</h3>
-                    <div class="tech-tags">
-                        <span>NE555</span><span>CD4017</span>
-                        <span>Proteus</span><span>KiCad</span><span>PCB</span>
-                    </div>
-                    <p>
-                        A professional-grade tool designed to test continuity and pin-to-pin wiring order in UTP/network
-                        cables. Based on a classic NE555 astable oscillator generating a clock for a CD4017 decade counter,
-                        it sequentially tests all 8 wires. I designed the full system from theoretical calculations to
-                        simulation in Proteus, and finally PCB layout in KiCad. After manufacturing and soldering, I
-                        identified and fixed open-circuit traces using a multimeter and solder bridges, demonstrating
-                        strong troubleshooting skills.
-                    </p>
+    <!-- ==================== SERVICES ==================== -->
+    <section id="services">
+        <div class="container">
+            <h2 class="section-title">My <span>Services</span></h2>
+            <p class="section-subtitle">— What I offer —</p>
+            <div class="services-container">
+                <div class="service-card">
+                    <i class="fas fa-microchip"></i>
+                    <h3>Electronic Circuit Design</h3>
+                    <p>From simulation (Proteus) to schematic design, creating reliable analog and digital circuits.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-pcb"></i>
+                    <h3>PCB Prototyping</h3>
+                    <p>Full PCB layout in KiCad, including etching, soldering, and hands-on troubleshooting.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-wifi"></i>
+                    <h3>Embedded Systems (IoT)</h3>
+                    <p>Programming microcontrollers (ESP32) and integrating sensors, cameras, and wireless communication.</p>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <!-- Proyecto 3: Esquemático / Diseño PCB (usamos esq1.png) -->
-            <div class="portfolio-item">
-                <img src="img/esq1.png" alt="PCB Design Schematic" />
-                <div class="portfolio-info">
-                    <h3>PCB Layout & Manufacturing</h3>
-                    <div class="tech-tags">
-                        <span>KiCad</span><span>Pertinax</span><span>Etching</span>
+    <!-- ==================== PORTFOLIO ==================== -->
+    <section id="portfolio">
+        <div class="container">
+            <h2 class="section-title">Latest <span>Projects</span></h2>
+            <p class="section-subtitle">— My recent work —</p>
+            <div class="portfolio-container">
+
+                <!-- PROYECTO 1: SEMÁFORO FOTOMULTA -->
+                <div class="portfolio-item">
+                    <img src="img/semaforo.jpg" alt="Smart Red Light Camera" />
+                    <div class="portfolio-info">
+                        <h3>Smart Red Light Camera System</h3>
+                        <div class="tech-tags">
+                            <span>ESP32</span><span>ESP32-CAM</span>
+                            <span>Ultrasonic</span><span>Flask</span><span>MongoDB</span>
+                        </div>
+                        <p>
+                            This project simulates an intelligent traffic enforcement system. An ESP32 controls a traffic 
+                            light and an ultrasonic sensor. When the light turns red and a vehicle passes, it triggers an 
+                            ESP32-CAM module via WiFi to capture a photo. The image is sent with a timestamp to a MongoDB 
+                            database on a PC. A Flask server serves a web interface that uses OCR to extract the license 
+                            plate and automatically generates a digital traffic fine.
+                        </p>
                     </div>
-                    <p>
-                        Complete workflow from schematic capture to PCB routing in KiCad for the LAN Tester project.
-                        Includes the transfer process using the heat transfer (iron) method, chemical etching in ferric
-                        chloride, and manual assembly. Faced and overcame challenges such as broken traces, using
-                        solder bridges and multimeter continuity tests to ensure full functionality.
-                    </p>
+                </div>
+
+                <!-- PROYECTO 2: TESTER LAN (Foto de la placa) -->
+                <div class="portfolio-item">
+                    <img src="img/placa.jpg" alt="LAN Tester Board" />
+                    <div class="portfolio-info">
+                        <h3>UTP LAN Cable Tester - Hardware</h3>
+                        <div class="tech-tags">
+                            <span>NE555</span><span>CD4017</span>
+                            <span>PCB</span><span>Soldering</span>
+                        </div>
+                        <p>
+                            A professional-grade tool designed to test continuity and pin-to-pin wiring order in UTP/network 
+                            cables. Based on a classic NE555 astable oscillator generating a clock for a CD4017 decade counter, 
+                            it sequentially tests all 8 wires. This photo shows the assembled board after soldering and 
+                            troubleshooting. I identified and fixed open-circuit traces using a multimeter and solder bridges, 
+                            demonstrating strong hands-on skills.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- PROYECTO 3: ESQUEMÁTICOS DEL TESTER LAN (usamos esq1.png y esq2.png en dos tarjetas? 
+                     Pero como tenemos 3 proyectos, podemos combinar los dos esquemas en una sola tarjeta o usar placa2.jpg 
+                     para el tercer proyecto. Voy a usar esq1.png para el tercero y dejar los dos esquemas separados? 
+                     Mejor uso placa2.jpg como tercer proyecto para mostrar otra perspectiva. -->
+                <div class="portfolio-item">
+                    <img src="img/placa2.jpg" alt="LAN Tester Board 2" />
+                    <div class="portfolio-info">
+                        <h3>PCB Layout & Manufacturing</h3>
+                        <div class="tech-tags">
+                            <span>KiCad</span><span>Pertinax</span><span>Etching</span>
+                        </div>
+                        <p>
+                            Complete workflow from schematic capture to PCB routing in KiCad for the LAN Tester project. 
+                            Includes the transfer process using the heat transfer (iron) method, chemical etching in ferric 
+                            chloride, and manual assembly. Faced and overcame challenges such as broken traces, using 
+                            solder bridges and multimeter continuity tests to ensure full functionality.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- EXTRA: Podemos agregar un cuarto proyecto con los esquemáticos si queremos, pero mejor dejamos 3 
+                     y usamos esq1.png y esq2.png dentro del texto o como imágenes adicionales? 
+                     Para no desaprovecharlas, voy a crear una cuarta tarjeta con los esquemáticos. -->
+                <div class="portfolio-item">
+                    <img src="img/esq1.png" alt="LAN Tester Schematic" />
+                    <div class="portfolio-info">
+                        <h3>Circuit Simulation & Schematic Design</h3>
+                        <div class="tech-tags">
+                            <span>Proteus</span><span>555 Timer</span><span>4017</span>
+                        </div>
+                        <p>
+                            Schematic design and simulation of the LAN Tester circuit in Proteus. The NE555 is configured 
+                            as an astable oscillator generating a clock signal for the CD4017 decade counter. The frequency 
+                            was calculated as 1.384 Hz using the formula F = 1.44 / ((R1 + 2R2)*C1). The simulation verified 
+                            the sequential testing of all 8 wires.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Y también podemos incluir esq2.png como quinto proyecto para mostrar el otro esquema -->
+                <div class="portfolio-item">
+                    <img src="img/esq2.png" alt="LAN Tester Schematic 2" />
+                    <div class="portfolio-info">
+                        <h3>Detailed PCB Schematic (KiCad)</h3>
+                        <div class="tech-tags">
+                            <span>KiCad</span><span>RJ45</span><span>LEDs</span>
+                        </div>
+                        <p>
+                            Detailed schematic view of the LAN Tester in KiCad, showing the connections between the 
+                            CD4017 outputs, the RJ45 connectors, and the 8 test LEDs. This schematic was used to generate 
+                            the PCB layout and manufacturing files.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== CONTACT ==================== -->
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-title">Contact <span>Me</span></h2>
+            <p class="section-subtitle">— Let's connect —</p>
+            <div class="contact-box">
+                <p>📩 Feel free to reach out for collaborations, project ideas, or just a technical chat!</p>
+                <a href="mailto:sperezpradi@gmail.com" class="email-link">sperezpradi@gmail.com</a>
+                <div class="social">
+                    <a href="#" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="#" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
                 </div>
             </div>
-
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- CONTACT -->
-<section id="contact">
-    <div class="container">
-        <h2 class="section-title">Contact <span>Me</span></h2>
-        <p class="section-subtitle">— Let's connect —</p>
-        <div class="contact-box">
-            <p>📩 Feel free to reach out for collaborations, project ideas, or just a technical chat!</p>
-            <a href="mailto:sperezpradi@gmail.com" class="email-link">sperezpradi@gmail.com</a>
-            <div class="social">
-                <a href="#" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-                <a href="#" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                <a href="#" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
-            </div>
+    <!-- ==================== FOOTER ==================== -->
+    <footer>
+        <div class="container">
+            <p>© 2025 <span>Santiago Pérez Pradi</span>. All Rights Reserved.</p>
         </div>
-    </div>
-</section>
+    </footer>
 
-<!-- FOOTER -->
-<footer>
-    <div class="container">
-        <p>© 2025 <span>Santiago Pérez Pradi</span>. All Rights Reserved.</p>
-    </div>
-</footer>
+    <!-- ==================== JAVASCRIPT (Menú Hamburguesa) ==================== -->
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
 
-<!-- JS para menú hamburguesa -->
-<script>
-    const hamburger = document.getElementById('hamburger');
-    const navLinks = document.getElementById('navLinks');
-    hamburger.addEventListener('click', () => {
-        navLinks.classList.toggle('open');
-    });
-    // Resaltar sección activa
-    const sections = document.querySelectorAll('section');
-    const navLi = document.querySelectorAll('.nav-links a');
-    window.addEventListener('scroll', () => {
-        let current = '';
-        sections.forEach(section => {
-            const top = section.offsetTop - 120;
-            if (scrollY >= top) current = section.getAttribute('id');
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('open');
         });
+
+        // Resaltar sección activa al hacer scroll
+        const sections = document.querySelectorAll('section');
+        const navLi = document.querySelectorAll('.nav-links a');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 120;
+                if (scrollY >= sectionTop) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLi.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Cerrar menú al hacer clic en un link (móvil)
         navLi.forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('href') === '#' + current) {
-                link.classList.add('active');
-            }
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('open');
+            });
         });
-    });
-    // Cerrar menú al hacer clic en enlace
-    navLi.forEach(link => {
-        link.addEventListener('click', () => {
-            navLinks.classList.remove('open');
-        });
-    });
-</script>
+    </script>
 
 </body>
 </html>
